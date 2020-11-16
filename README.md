@@ -7,7 +7,7 @@ See the READMEs in each subdirectory for more information.
 # Contributing
 
 Please submit patches to
-https://gitlab.com/wireshark/wireshark-docker
+https://gitlab.com/wireshark/wireshark-containers
 
 For Wireshark patches, see
 https://www.wireshark.org/docs/wsdg_html_chunked/ChSrcContribute.html
