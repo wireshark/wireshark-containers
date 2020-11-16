@@ -1,5 +1,5 @@
 FROM ubuntu:18.04
-ADD https://raw.githubusercontent.com/wireshark/wireshark/master/tools/debian-setup.sh /
+ADD https://gitlab.com/wireshark/wireshark/-/raw/master/tools/debian-setup.sh /
 RUN apt-get update \
 	&& apt-get install gnupg apt-utils ca-certificates -y --no-install-recommends \
 	&& echo "deb https://apt.llvm.org/bionic/ llvm-toolchain-bionic-10 main" > /etc/apt/sources.list.d/clang10.list \
@@ -12,4 +12,7 @@ RUN apt-get update \
 		python3-pytest-xdist locales \
 		gcc-7 g++-7 \
 		clang-10 \
+		cppcheck clang-tools python-pygments \
+		ccache \
+		lintian \
 	&& rm -rf /var/lib/apt/lists/
