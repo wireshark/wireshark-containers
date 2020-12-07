@@ -27,4 +27,5 @@ RUN chmod -v +x debian-setup*.sh \
 		python-pygments \
 		python3-pytest-xdist \
 		shellcheck \
+		xvfb \
 	&& rm -rf /var/lib/apt/lists/
