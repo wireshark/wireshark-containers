@@ -7,7 +7,8 @@ RUN chmod -v +x rpm-setup*.sh \
 	&& dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm \
 	&& dnf upgrade -y \
 	&& dnf -y install dnf-plugins-core \
-	&& dnf config-manager --enable PowerTools \
+	&& dnf repolist all \
+	&& dnf config-manager --enable powertools \
 	&& dnf config-manager --enable Devel \
 	&& ./rpm-setup-3.4.sh --install-optional -y \
 	&& ./rpm-setup-master.sh --install-optional -y
