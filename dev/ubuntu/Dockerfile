@@ -29,5 +29,4 @@ RUN export DEBIAN_FRONTEND="noninteractive" DEBCONF_NONINTERACTIVE_SEEN=true \
 		python-pygments \
 		python3-pytest-xdist \
 		shellcheck \
-		xvfb \
 	&& rm -rf /var/lib/apt/lists/
