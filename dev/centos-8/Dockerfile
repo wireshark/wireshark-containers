@@ -9,6 +9,6 @@ RUN chmod -v +x rpm-setup*.sh \
 	&& dnf -y install dnf-plugins-core \
 	&& dnf repolist all \
 	&& dnf config-manager --enable powertools \
-	&& dnf config-manager --enable Devel \
+	&& dnf config-manager --enable devel \
 	&& ./rpm-setup-3.4.sh --install-optional -y \
 	&& ./rpm-setup-master.sh --install-optional -y
