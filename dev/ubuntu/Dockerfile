@@ -2,7 +2,9 @@ FROM ubuntu:20.04
 ADD https://gitlab.com/wireshark/wireshark/-/raw/master/tools/debian-setup.sh /debian-setup-master.sh
 ADD https://gitlab.com/wireshark/wireshark/-/raw/release-3.4/tools/debian-setup.sh /debian-setup-3.4.sh
 # NOTE: Ensure that we provide clang-[xy] versions used in .gitlab-ci.yml in each active Wireshark branch.
-RUN chmod -v +x debian-setup*.sh \
+RUN export DEBIAN_FRONTEND="noninteractive" DEBCONF_NONINTERACTIVE_SEEN=true \
+	&& timedatectl set-timezone UTC \
+	&& chmod -v +x debian-setup*.sh \
 	&& apt-get update \
 	&& apt-get install gnupg apt-utils ca-certificates -y --no-install-recommends \
 	&& apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6084F3CF814B57C1CF12EFD515CF4D18AF4F7421 \
