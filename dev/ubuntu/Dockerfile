@@ -22,8 +22,10 @@ RUN export DEBIAN_FRONTEND="noninteractive" DEBCONF_NONINTERACTIVE_SEEN=true \
 		clang-11 \
 		clang-tools \
 		cppcheck \
+		doxygen \
 		fakeroot \
 		gcc-10 g++-10 \
+		graphviz \
 		lintian \
 		locales \
 		python-pygments \
