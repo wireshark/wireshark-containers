@@ -7,4 +7,4 @@ RUN export DEBIAN_FRONTEND="noninteractive" DEBCONF_NONINTERACTIVE_SEEN=true \
 	&& apt-get update \
 	&& ./debian-setup-3.4.sh --install-optional --install-test-deps -y --install-deb-deps \
 	&& ./debian-setup-master.sh --install-optional --install-test-deps -y --install-deb-deps \
-		dpkg-buildpackage
+		dpkg-dev
