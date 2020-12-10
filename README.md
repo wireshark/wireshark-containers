@@ -4,6 +4,8 @@ This repository contains various Docker images related to [Wireshark](https://ww
 
 See the READMEs in each [subdirectory of this repository](https://gitlab.com/wireshark/wireshark-containers/-/tree/master) for more information.
 
+The images under [dev](https://gitlab.com/wireshark/wireshark-containers/-/tree/master/dev) are used for [CI in the main repository](https://gitlab.com/wireshark/wireshark/-/blob/master/.gitlab-ci.yml).
+
 # Contributing
 
 Please submit patches to
