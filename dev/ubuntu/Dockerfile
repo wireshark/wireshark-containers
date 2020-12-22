@@ -4,7 +4,6 @@ ADD https://gitlab.com/wireshark/wireshark/-/raw/release-3.4/tools/debian-setup.
 # NOTE: Ensure that we provide clang-[xy] versions used in .gitlab-ci.yml in each active Wireshark branch.
 RUN export DEBIAN_FRONTEND="noninteractive" DEBCONF_NONINTERACTIVE_SEEN=true \
 	&& printf "tzdata tzdata/Areas select Etc\ntzdata tzdata/Zones/Etc select UTC" | debconf-set-selections \
-	&& locale-gen en_US.UTF-8 \
 	&& chmod -v +x debian-setup*.sh \
 	&& apt-get update \
 	&& apt-get install gnupg apt-utils ca-certificates -y --no-install-recommends \
@@ -32,4 +31,5 @@ RUN export DEBIAN_FRONTEND="noninteractive" DEBCONF_NONINTERACTIVE_SEEN=true \
 		python-pygments \
 		python3-pytest-xdist \
 		shellcheck \
+	&& locale-gen en_US.UTF-8 \
 	&& rm -rf /var/lib/apt/lists/
