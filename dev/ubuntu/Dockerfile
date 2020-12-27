@@ -26,6 +26,7 @@ RUN export DEBIAN_FRONTEND="noninteractive" DEBCONF_NONINTERACTIVE_SEEN=true \
 		fakeroot \
 		gcc-10 g++-10 \
 		graphviz \
+		jq \
 		lintian \
 		locales \
 		python-pygments \
