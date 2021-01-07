@@ -11,6 +11,7 @@ RUN chmod -v +x rpm-setup*.sh \
 	&& ./rpm-setup-3.2.sh --install-optional \
 	&& ./rpm-setup-3.4.sh --install-optional \
 	&& ./rpm-setup-master.sh --install-optional \
+		ccache \
 		cmake \
 		ruby \
 	&& gem install asciidoctor -v 1.5.8 --no-ri --no-rdoc

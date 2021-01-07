@@ -11,4 +11,5 @@ RUN chmod -v +x rpm-setup*.sh \
 	&& yum upgrade -y \
 	&& ./rpm-setup-3.2.sh --install-optional -y \
 	&& ./rpm-setup-3.4.sh --install-optional -y \
-	&& ./rpm-setup-master.sh --install-optional -y
+	&& ./rpm-setup-master.sh --install-optional -y \
+		ccache

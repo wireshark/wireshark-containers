@@ -11,4 +11,5 @@ RUN chmod -v +x rpm-setup*.sh \
 	&& dnf config-manager --enable powertools \
 	&& dnf config-manager --enable devel \
 	&& ./rpm-setup-3.4.sh --install-optional -y \
-	&& ./rpm-setup-master.sh --install-optional -y
+	&& ./rpm-setup-master.sh --install-optional -y \
+		ccache

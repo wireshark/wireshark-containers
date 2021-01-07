@@ -5,6 +5,7 @@ RUN chmod -v +x rpm-setup*.sh \
 	&& zypper --non-interactive install update-desktop-files \
 	&& ./rpm-setup-3.4.sh --install-optional \
 	&& ./rpm-setup-master.sh --install-optional \
+		ccache \
 		cmake \
 		ruby \
 	&& gem install asciidoctor -v 2.0.10 --no-ri --no-rdoc
