@@ -7,7 +7,7 @@ RUN export DEBIAN_FRONTEND="noninteractive" DEBCONF_NONINTERACTIVE_SEEN=true \
 	&& printf "tzdata tzdata/Areas select Etc\ntzdata tzdata/Zones/Etc select UTC" | debconf-set-selections \
 	&& chmod -v +x debian-setup*.sh \
 	&& apt-get update \
-	&& apt-get install gnupg apt-utils ca-certificates ${COMMON_APT_GET_ARGS} \
+	&& apt-get install build-essential gnupg apt-utils ca-certificates ${COMMON_APT_GET_ARGS} \
 	&& apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6084F3CF814B57C1CF12EFD515CF4D18AF4F7421 \
 	&& echo "deb http://apt.llvm.org/focal/ llvm-toolchain-focal-11 main" > /etc/apt/sources.list.d/clang-11.list \
 	&& echo "deb http://apt.llvm.org/focal/ llvm-toolchain-focal-10 main" > /etc/apt/sources.list.d/clang-10.list \
@@ -33,4 +33,5 @@ RUN export DEBIAN_FRONTEND="noninteractive" DEBCONF_NONINTERACTIVE_SEEN=true \
 		python3-pytest-xdist \
 		shellcheck \
 	&& locale-gen en_US.UTF-8 \
+	&& dpkg-query -Wf '${Installed-Size}\t${Package}\n' | sort -rn | head -n 50 \
 	&& rm -rf /var/lib/apt/lists/
