@@ -15,4 +15,4 @@ RUN chmod -v +x rpm-setup*.sh \
 	&& ./rpm-setup-master.sh ${COMMON_YUM_ARGS} --install-optional \
 		ccache \
 	&& rpm -qa --queryformat '%10{size}\t%-25{name}\n' | sort -rn | head -n 50 \
-	&& yum clean all
+	&& dnf clean all
