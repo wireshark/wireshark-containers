@@ -14,5 +14,6 @@ RUN chmod -v +x rpm-setup*.sh \
 	&& ./rpm-setup-3.4.sh ${COMMON_YUM_ARGS} --install-optional \
 	&& ./rpm-setup-master.sh ${COMMON_YUM_ARGS} --install-optional \
 		ccache \
+		rpm-build \
 	&& rpm -qa --queryformat '%10{size}\t%-25{name}\n' | sort -rn | head -n 50 \
 	&& dnf clean all

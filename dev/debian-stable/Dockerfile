@@ -10,5 +10,7 @@ RUN export DEBIAN_FRONTEND="noninteractive" DEBCONF_NONINTERACTIVE_SEEN=true \
 	&& ./debian-setup-3.4.sh ${COMMON_APT_GET_ARGS} --install-optional --install-test-deps --install-deb-deps \
 	&& ./debian-setup-master.sh ${COMMON_APT_GET_ARGS} --install-optional --install-test-deps --install-deb-deps \
 		dpkg-dev \
+		omniidl \
+		snacc \
 	&& dpkg-query -Wf '${Installed-Size}\t${Package}\n' | sort -rn | head -n 50 \
 	&& rm -rf /var/lib/apt/lists/
