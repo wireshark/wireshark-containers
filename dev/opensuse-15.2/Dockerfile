@@ -4,8 +4,8 @@ ADD https://gitlab.com/wireshark/wireshark/-/raw/release-3.4/tools/rpm-setup.sh 
 ENV COMMON_ZYPPER_ARGS="--no-confirm --no-recommends"
 RUN chmod -v +x rpm-setup*.sh \
 	&& zypper install ${COMMON_ZYPPER_ARGS} update-desktop-files \
-	&& ./rpm-setup-3.4.sh ${COMMON_ZYPPER_ARGS} --install-optional \
-	&& ./rpm-setup-master.sh ${COMMON_ZYPPER_ARGS} --install-optional \
+	&& ./rpm-setup-3.4.sh --install-optional \
+	&& ./rpm-setup-master.sh --install-optional \
 		ccache \
 		cmake \
 		ruby \
