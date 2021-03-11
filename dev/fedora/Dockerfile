@@ -6,4 +6,6 @@ RUN chmod -v +x rpm-setup*.sh \
 	&& dnf upgrade -y \
 	&& ./rpm-setup-3.4.sh ${COMMON_DNF_ARGS} --install-optional \
 	&& ./rpm-setup-master.sh ${COMMON_DNF_ARGS} --install-optional \
-		ccache
+		ccache \
+	&& rpm -qa --queryformat '%10{size}\t%-25{name}\n' | sort -rn | head -n 50 \
+	&& yum clean all
