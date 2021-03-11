@@ -1,9 +1,9 @@
 FROM opensuse/leap:15.2
 ADD https://gitlab.com/wireshark/wireshark/-/raw/master/tools/rpm-setup.sh /rpm-setup-master.sh
 ADD https://gitlab.com/wireshark/wireshark/-/raw/release-3.4/tools/rpm-setup.sh /rpm-setup-3.4.sh
-ENV COMMON_ZYPPER_ARGS="--non-interactive --no-recommends"
+ENV COMMON_ZYPPER_ARGS="--no-confirm --no-recommends"
 RUN chmod -v +x rpm-setup*.sh \
-	&& zypper ${COMMON_ZYPPER_ARGS} install update-desktop-files \
+	&& zypper install ${COMMON_ZYPPER_ARGS} update-desktop-files \
 	&& ./rpm-setup-3.4.sh ${COMMON_ZYPPER_ARGS} --install-optional \
 	&& ./rpm-setup-master.sh ${COMMON_ZYPPER_ARGS} --install-optional \
 		ccache \
