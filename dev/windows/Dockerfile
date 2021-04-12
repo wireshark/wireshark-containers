@@ -65,7 +65,7 @@ RUN "%TEMP%\vs_community.exe"  --quiet --wait --norestart --noUpdateInstaller `
 RUN choco install -y python3 && `
     choco install -y strawberryperl && `
     choco install -y git && `
-    choco install -y cmake && `
+    choco install -y cmake --version 3.19.8 && `
     choco install -y winflexbison3 && `
     choco install -y 7zip && `
     setx /M PATH "%PATH%;C:\Program Files\CMake\bin" && `
