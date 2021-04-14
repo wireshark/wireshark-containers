@@ -21,6 +21,7 @@ RUN export DEBIAN_FRONTEND="noninteractive" DEBCONF_NONINTERACTIVE_SEEN=true \
 		clang-10 \
 		clang-11 \
 		clang-tools \
+		colorized-logs \
 		cppcheck \
 		doxygen \
 		fakeroot \
