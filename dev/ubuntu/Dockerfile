@@ -9,6 +9,7 @@ RUN export DEBIAN_FRONTEND="noninteractive" DEBCONF_NONINTERACTIVE_SEEN=true \
 	&& apt-get update \
 	&& apt-get install build-essential gnupg apt-utils ca-certificates ${COMMON_APT_GET_ARGS} \
 	&& apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6084F3CF814B57C1CF12EFD515CF4D18AF4F7421 \
+	&& echo "deb http://apt.llvm.org/focal/ llvm-toolchain-focal-12 main" > /etc/apt/sources.list.d/clang-12.list \
 	&& echo "deb http://apt.llvm.org/focal/ llvm-toolchain-focal-11 main" > /etc/apt/sources.list.d/clang-11.list \
 	&& echo "deb http://apt.llvm.org/focal/ llvm-toolchain-focal-10 main" > /etc/apt/sources.list.d/clang-10.list \
 	&& apt-get update \
@@ -20,6 +21,7 @@ RUN export DEBIAN_FRONTEND="noninteractive" DEBCONF_NONINTERACTIVE_SEEN=true \
 		ccache \
 		clang-10 \
 		clang-11 \
+		clang-12 \
 		clang-tools \
 		colorized-logs \
 		cppcheck \
