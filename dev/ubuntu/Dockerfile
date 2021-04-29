@@ -25,6 +25,7 @@ RUN export DEBIAN_FRONTEND="noninteractive" DEBCONF_NONINTERACTIVE_SEEN=true \
 		clang-tools \
 		colorized-logs \
 		cppcheck \
+                curl \
 		doxygen \
 		fakeroot \
 		gcc-10 g++-10 \
