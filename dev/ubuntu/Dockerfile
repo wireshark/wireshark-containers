@@ -22,10 +22,10 @@ RUN export DEBIAN_FRONTEND="noninteractive" DEBCONF_NONINTERACTIVE_SEEN=true \
 		clang-10 \
 		clang-11 \
 		clang-12 \
-		clang-tools \
+		clang-tools-12 \
 		colorized-logs \
 		cppcheck \
-                curl \
+		curl \
 		doxygen \
 		fakeroot \
 		gcc-10 g++-10 \
