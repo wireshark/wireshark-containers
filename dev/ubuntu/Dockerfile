@@ -36,6 +36,7 @@ RUN export DEBIAN_FRONTEND="noninteractive" DEBCONF_NONINTERACTIVE_SEEN=true \
 		python-pygments \
 		python3-pytest-xdist \
 		shellcheck \
+		sloccount \
 		zip \
 	&& locale-gen en_US.UTF-8 \
 	&& dpkg-query -Wf '${Installed-Size}\t${Package}\n' | sort -rn | head -n 50 \
