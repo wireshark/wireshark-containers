@@ -1,3 +1,7 @@
+# To do:
+# - Remove clang-11. No longer used in master.
+# - Remove unversioned clang-tools.
+
 FROM ubuntu:20.04
 ADD https://gitlab.com/wireshark/wireshark/-/raw/master/tools/debian-setup.sh /debian-setup-master.sh
 ADD https://gitlab.com/wireshark/wireshark/-/raw/release-3.4/tools/debian-setup.sh /debian-setup-3.4.sh
@@ -22,6 +26,7 @@ RUN export DEBIAN_FRONTEND="noninteractive" DEBCONF_NONINTERACTIVE_SEEN=true \
 		clang-10 \
 		clang-11 \
 		clang-12 \
+		clang-tools \
 		clang-tools-12 \
 		colorized-logs \
 		cppcheck \
