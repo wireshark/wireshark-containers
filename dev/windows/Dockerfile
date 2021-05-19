@@ -17,7 +17,7 @@ RUN reg add "HKLM\SOFTWARE\Microsoft\Windows\Windows Error Reporting" /v DontSho
 RUN powershell -NoProfile -ExecutionPolicy Bypass -Command `
     $Env:chocolateyVersion = '0.10.15' ; `
     $Env:chocolateyUseWindowsCompression = 'false' ; `
-    "[Net.ServicePointManager]::SecurityProtocol = \"tls12, tls11, tls\"; iex ((New-Object System.Net.WebClient).DownloadString('http://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+    "[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
 
 # Install Visual C++ by hand, since Chocolatey's dotnetfx package is problematic.
 # https://stackoverflow.com/a/62953087/82195
