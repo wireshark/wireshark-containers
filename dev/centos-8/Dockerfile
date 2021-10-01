@@ -16,8 +16,7 @@ RUN chmod -v +x rpm-setup*.sh \
 		ccache \
 		rpm-build \
 		ruby \
-	&& type -p ruby \
-	&& type -p gem \
+		rubygems \
 	&& /usr/bin/gem install asciidoctor -v 2.0.16 --no-ri --no-rdoc \
 	&& rpm -qa --queryformat '%10{size}\t%-25{name}\n' | sort -rn | head -n 50 \
 	&& dnf clean all

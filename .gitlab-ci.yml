@@ -1,4 +1,4 @@
-wireshark-centos-8-dev:
+centos-8-dev:
   image: docker:19.03.12
   stage: build
   services:
