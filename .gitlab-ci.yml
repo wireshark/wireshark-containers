@@ -23,7 +23,7 @@ centos-8-dev:
 debian-stable-dev:
   extends: .build-linux-dev
 
-debian-stable-dev:
+fedora-dev:
   extends: .build-linux-dev
 
 opensuse-15.2-dev:
