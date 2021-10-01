@@ -5,7 +5,7 @@ ENV COMMON_DNF_ARGS="--assumeyes --setopt=install_weak_deps=False"
 RUN chmod -v +x rpm-setup*.sh \
 	&& dnf upgrade -y \
 	&& ./rpm-setup-3.4.sh ${COMMON_DNF_ARGS} --install-optional \
-	&& ./rpm-setup-master.sh ${COMMON_DNF_ARGS} --install-optional \
+	&& ./rpm-setup-master.sh ${COMMON_DNF_ARGS} --install-optional --install-rpm-deps \
 		ccache \
 	&& rpm -qa --queryformat '%10{size}\t%-25{name}\n' | sort -rn | head -n 50 \
 	&& yum clean all

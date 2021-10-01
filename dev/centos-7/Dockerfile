@@ -12,7 +12,7 @@ RUN chmod -v +x rpm-setup*.sh \
 	&& yum upgrade -y \
 	&& ./rpm-setup-3.2.sh ${COMMON_YUM_ARGS} --install-optional \
 	&& ./rpm-setup-3.4.sh ${COMMON_YUM_ARGS} --install-optional \
-	&& ./rpm-setup-master.sh ${COMMON_YUM_ARGS} --install-optional \
+	&& ./rpm-setup-master.sh ${COMMON_YUM_ARGS} --install-optional --install-rpm-deps \
 		ccache \
 		rpm-build \
 	&& rpm -qa --queryformat '%10{size}\t%-25{name}\n' | sort -rn | head -n 50 \
