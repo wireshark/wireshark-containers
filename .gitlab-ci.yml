@@ -4,10 +4,13 @@ centos-8-dev:
   services:
     - docker:19.03.12-dind
   script:
-    - cd dev/$CI_JOB_NAME
+    - cd dev/centos-8
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
     - docker build -t $CI_REGISTRY_IMAGE/$CI_JOB_NAME:latest .
     - docker push $CI_REGISTRY_IMAGE/$CI_JOB_NAME:latest
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+      when: manual
 
 opensuse-15.2-dev:
   image: docker:19.03.12
@@ -15,7 +18,10 @@ opensuse-15.2-dev:
   services:
     - docker:19.03.12-dind
   script:
-    - cd dev/$CI_JOB_NAME
+    - cd dev/opensuse-15.2
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
     - docker build -t $CI_REGISTRY_IMAGE/$CI_JOB_NAME:latest .
     - docker push $CI_REGISTRY_IMAGE/$CI_JOB_NAME:latest
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+      when: manual
