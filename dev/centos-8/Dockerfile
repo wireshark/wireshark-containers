@@ -15,5 +15,7 @@ RUN chmod -v +x rpm-setup*.sh \
 	&& ./rpm-setup-master.sh ${COMMON_YUM_ARGS} --install-optional --install-rpm-deps \
 		ccache \
 		rpm-build \
+		ruby \
+	&& gem install asciidoctor -v 2.0.10 --no-ri --no-rdoc \
 	&& rpm -qa --queryformat '%10{size}\t%-25{name}\n' | sort -rn | head -n 50 \
 	&& dnf clean all
