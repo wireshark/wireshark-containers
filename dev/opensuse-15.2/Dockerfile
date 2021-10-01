@@ -7,7 +7,5 @@ RUN chmod -v +x rpm-setup*.sh \
 	&& ./rpm-setup-3.4.sh --install-optional \
 	&& ./rpm-setup-master.sh --install-optional --install-rpm-deps \
 		ccache \
-		ruby \
-	&& gem install asciidoctor -v 2.0.16 --no-ri --no-rdoc \
 	&& rpm -qa --queryformat '%10{size}\t%-25{name}\n' | sort -rn | head -n 50 \
 	&& zypper clean --all
