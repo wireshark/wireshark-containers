@@ -4,7 +4,7 @@ wireshark-centos-8-dev:
   services:
     - docker:19.03.12-dind
   script:
-    - cd dev/wireshark-centos-8-dev
+    - cd dev/centos-8-dev
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
     - docker build -t $CI_REGISTRY_IMAGE/$CI_JOB_NAME:latest .
     - docker push $CI_REGISTRY_IMAGE/$CI_JOB_NAME:latest
